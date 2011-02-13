@@ -12,14 +12,23 @@
 
 - (id)init
 {
-    self = [super init];
-    if (self) {
-    
-        // Add your subclass-specific initialization here.
-        // If an error occurs here, send a [self release] message and return nil.
-    
-    }
-    return self;
+    [super init];
+	employees = [[NSMutableArray alloc] init];
+	return self;
+}
+
+- (void)dealloc {
+	[self setEmployees:nil];
+	[super dealloc];
+}
+
+- (void)setEmployees:(NSMutableArray *)a {
+	if (a == employees)
+		return;
+	
+	[a retain];
+	[employees release];
+	employees = a;
 }
 
 - (NSString *)windowNibName
