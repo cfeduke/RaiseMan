@@ -10,8 +10,7 @@
 
 @implementation MyDocument
 
-- (id)init
-{
+- (id)init {
     [super init];
 	employees = [[NSMutableArray alloc] init];
 	return self;
