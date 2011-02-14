@@ -7,7 +7,6 @@
 //
 
 #import "MyDocument.h"
-#import "Person.h"
 
 @implementation MyDocument
 
@@ -26,9 +25,17 @@
 	if (a == employees)
 		return;
 	
+	for (Person *person in employees) {
+		[self stopObservingPerson:person];
+	}
+	
 	[a retain];
 	[employees release];
 	employees = a;
+	
+	for (Person *person in employees) {
+		[self startObservingPerson:person];
+	}
 }
 
 - (void)insertObject:(Person *)p inEmployeesAtIndex:(int)index {
@@ -39,6 +46,8 @@
 		[undo setActionName:@"Insert Person"];
 	}
 	[employees insertObject:p atIndex:index];
+	[self startObservingPerson:p];
+	
 }
 
 - (void)removeObjectFromEmployeesAtIndex:(int)index {
@@ -52,6 +61,48 @@
 	}
 	
 	[employees removeObjectAtIndex:index];
+	[self stopObservingPerson:p];
+}
+
+- (void)startObservingPerson:(Person *)person {
+	[person addObserver:self
+			 forKeyPath:@"personName"
+				options:NSKeyValueObservingOptionOld
+				context:NULL];
+	
+	[person addObserver:self
+			 forKeyPath:@"expectedRaise"
+				options:NSKeyValueObservingOptionOld
+				context:NULL];
+}
+
+- (void)stopObservingPerson:(Person *)person {
+	[person removeObserver:self forKeyPath:@"personName"];
+	[person removeObserver:self forKeyPath:@"expectedRaise"];
+}
+
+- (void)changeKeyPath:(NSString *)keyPath
+			 ofObject:(id)obj
+			  toValue:(id)newValue {
+	[obj setValue:newValue forKeyPath:keyPath];
+}
+- (void)observeValueForKeyPath:(NSString *)keyPath 
+					  ofObject:(id)object 
+						change:(NSDictionary *)change 
+					   context:(void *)context {
+	NSUndoManager *undo = [self undoManager];
+	id oldValue = [change objectForKey:NSKeyValueChangeOldKey];
+	
+	if (oldValue == [NSNull null]) {
+		oldValue = nil;
+	}
+	
+	NSLog(@"oldValue = %@", oldValue);
+	
+	[[undo prepareWithInvocationTarget:self] changeKeyPath:keyPath
+												  ofObject:object
+												   toValue:oldValue];
+	[undo setActionName:@"Edit"];
 }
 
 - (NSString *)windowNibName
