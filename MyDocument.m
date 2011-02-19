@@ -14,12 +14,31 @@
 - (id)init {
     [super init];
 	employees = [[NSMutableArray alloc] init];
+	
+	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+	[nc addObserver:self 
+		   selector:@selector(handleColorChange:) 
+			   name:BNRColorChangedNotification 
+			 object:nil];
+	
 	return self;
 }
 
 - (void)dealloc {
 	[self setEmployees:nil];
+	
+	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+	[nc removeObserver:self];
+	
+	
 	[super dealloc];
+}
+
+-(void)handleColorChange:(NSNotification*)note {
+	NSLog(@"received notification: %@", note);
+	
+	NSColor* color = [[note userInfo] objectForKey:@"color"];
+	[tableView setBackgroundColor:color];
 }
 
 - (void)setEmployees:(NSMutableArray *)a {

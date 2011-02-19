@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-extern NSString* const BNRTableBgColorKey;
-extern NSString* const BNREmptyDocKey;
+NSString* const BNRTableBgColorKey;
+NSString* const BNREmptyDocKey;
+NSString* const BNRColorChangedNotification;
 
 @interface PreferenceController : NSWindowController {
 	IBOutlet NSColorWell *colorWell;

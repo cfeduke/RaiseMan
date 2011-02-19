@@ -35,4 +35,10 @@
 	NSLog(@"applicationShouldOpenUntitledFile:");
 	return [[NSUserDefaults standardUserDefaults] boolForKey:BNREmptyDocKey];
 }
+
+-(void)applicationDidResignActive:(NSNotification*) note {
+	NSLog(@"BEEP BEEP!");
+	NSBeep();
+}
+
 @end
