@@ -7,6 +7,7 @@
 //
 
 #import "MyDocument.h"
+#import "PreferenceController.h"
 
 @implementation MyDocument
 
@@ -149,6 +150,11 @@
 - (void)windowControllerDidLoadNib:(NSWindowController *) aController
 {
     [super windowControllerDidLoadNib:aController];
+	
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSData* colorAsData;
+	colorAsData = [defaults objectForKey:BNRTableBgColorKey];
+	[tableView setBackgroundColor:[NSKeyedUnarchiver unarchiveObjectWithData:colorAsData]];
 }
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError

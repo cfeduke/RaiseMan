@@ -11,6 +11,10 @@
 		1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD582A0DA1D0D100B32029 /* MainMenu.xib */; };
 		8C3E512F1308822C008883CF /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E512E1308822C008883CF /* Person.m */; };
 		8C8D06CC130C029800925251 /* App.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D06CB130C029800925251 /* App.icns */; };
+		8C9094F0130DA1420058B741 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9094EF130DA1420058B741 /* AppController.m */; };
+		8C9094F6130DA2EE0058B741 /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9094F5130DA2EE0058B741 /* PreferenceController.m */; };
+		8C9094F8130DA35C0058B741 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C9094F7130DA35C0058B741 /* Preferences.xib */; };
+		8C909509130DA83A0058B741 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C909508130DA83A0058B741 /* About.xib */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
 		8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */; settings = {ATTRIBUTES = (); }; };
@@ -34,6 +38,12 @@
 		8C3E512D1308822C008883CF /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		8C3E512E1308822C008883CF /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		8C8D06CB130C029800925251 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = App.icns; sourceTree = "<group>"; };
+		8C9094EE130DA1420058B741 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		8C9094EF130DA1420058B741 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		8C9094F4130DA2EE0058B741 /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceController.h; sourceTree = "<group>"; };
+		8C9094F5130DA2EE0058B741 /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceController.m; sourceTree = "<group>"; };
+		8C9094F7130DA35C0058B741 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		8C909508130DA83A0058B741 /* About.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* RaiseMan-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RaiseMan-Info.plist"; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* RaiseMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,6 +105,10 @@
 				2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */,
 				8C3E512D1308822C008883CF /* Person.h */,
 				8C3E512E1308822C008883CF /* Person.m */,
+				8C9094EE130DA1420058B741 /* AppController.h */,
+				8C9094EF130DA1420058B741 /* AppController.m */,
+				8C9094F4130DA2EE0058B741 /* PreferenceController.h */,
+				8C9094F5130DA2EE0058B741 /* PreferenceController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -117,6 +131,8 @@
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
 				1DDD58280DA1D0D100B32029 /* MyDocument.xib */,
 				1DDD582A0DA1D0D100B32029 /* MainMenu.xib */,
+				8C9094F7130DA35C0058B741 /* Preferences.xib */,
+				8C909508130DA83A0058B741 /* About.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -185,6 +201,8 @@
 				1DDD582C0DA1D0D100B32029 /* MyDocument.xib in Resources */,
 				1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */,
 				8C8D06CC130C029800925251 /* App.icns in Resources */,
+				8C9094F8130DA35C0058B741 /* Preferences.xib in Resources */,
+				8C909509130DA83A0058B741 /* About.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +216,8 @@
 				8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */,
 				8D15AC320486D014006FF6A4 /* main.m in Sources */,
 				8C3E512F1308822C008883CF /* Person.m in Sources */,
+				8C9094F0130DA1420058B741 /* AppController.m in Sources */,
+				8C9094F6130DA2EE0058B741 /* PreferenceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
