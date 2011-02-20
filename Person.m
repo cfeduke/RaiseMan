@@ -45,4 +45,7 @@
 	expectedRaise = [coder decodeFloatForKey:@"expectedRaise"];
 	return self;
 }
+-(void)removeRaise {
+	self.expectedRaise = 0.0;
+}
 @end

@@ -21,4 +21,5 @@
 -(void)insertObject:(Person *)p inEmployeesAtIndex:(int)index;
 -(void)startObservingPerson:(Person *)person;
 -(void)stopObservingPerson:(Person *)person;
+-(IBAction)removeEmployee:(id)sender;
 @end

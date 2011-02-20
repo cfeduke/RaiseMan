@@ -16,4 +16,6 @@
 
 @property (readwrite, copy) NSString *personName;
 @property (readwrite) float expectedRaise;
+
+-(void)removeRaise;
 @end

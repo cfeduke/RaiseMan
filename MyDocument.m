@@ -8,6 +8,7 @@
 
 #import "MyDocument.h"
 #import "PreferenceController.h"
+#import "Person.h"
 
 @implementation MyDocument
 
@@ -202,5 +203,33 @@
 	[self setEmployees:newArray];
 	return YES;
 }
+-(IBAction)removeEmployee:(id)sender {
+	NSArray* selectedPeople = [employeeController selectedObjects];
+	NSAlert* alert = [NSAlert alertWithMessageText:@"Delete?" 
+									 defaultButton:@"Delete" 
+								   alternateButton:@"Cancel" 
+									   otherButton:@"No Raise" 
+						 informativeTextWithFormat:@"Do you really want to delete %d people?", [selectedPeople count]]; 
+	[alert beginSheetModalForWindow:[tableView window]
+					  modalDelegate:self
+					 didEndSelector:@selector(alertEnded:code:context:)
+						contextInfo:NULL];
+}
 
+-(void)alertEnded:(NSAlert*)alert
+			 code:(int)choice
+		  context:(void*)v {
+	NSLog(@"alert sheet ended");
+	if (choice == NSAlertDefaultReturn) {
+		NSLog(@"NSAlertDefaultReturn");
+		[employeeController remove:nil];
+	}
+	else if (choice == NSAlertOtherReturn) {
+		NSLog(@"NSAlertOtherReturn");
+		for (Person* person in [employeeController selectedObjects]) {
+			NSLog(@"removing raise for \"%s\"", [person personName]);
+			[person removeRaise];
+		}
+	}
+}
 @end
