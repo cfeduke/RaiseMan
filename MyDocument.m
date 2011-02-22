@@ -9,6 +9,7 @@
 #import "MyDocument.h"
 #import "PreferenceController.h"
 #import "Person.h"
+#import "PeopleView.h"
 
 @implementation MyDocument
 
@@ -232,4 +233,14 @@
 		}
 	}
 }
+
+-(NSPrintOperation *)printOperationWithSettings:(NSDictionary *)ps error:(NSError **)e {
+	PeopleView *view = [[PeopleView alloc] initWithPeople:employees];
+	NSPrintInfo *printInfo = [self printInfo];
+	NSPrintOperation *printOp = [NSPrintOperation printOperationWithView:view printInfo:printInfo];
+	
+	[view release];
+	return printOp;
+}
+
 @end

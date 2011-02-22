@@ -16,6 +16,7 @@
 		8C9094F8130DA35C0058B741 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C9094F7130DA35C0058B741 /* Preferences.xib */; };
 		8C909509130DA83A0058B741 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C909508130DA83A0058B741 /* About.xib */; };
 		8C9095D61310A30E0058B741 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C9095D41310A30E0058B741 /* Localizable.strings */; };
+		8C9097561313F3050058B741 /* PeopleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9097551313F3050058B741 /* PeopleView.m */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
 		8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */; settings = {ATTRIBUTES = (); }; };
@@ -48,6 +49,8 @@
 		8C9095C91310A1FF0058B741 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MyDocument.xib; sourceTree = "<group>"; };
 		8C9095D51310A30E0058B741 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C9095D81310A3760058B741 /* French */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C9097541313F3050058B741 /* PeopleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleView.h; sourceTree = "<group>"; };
+		8C9097551313F3050058B741 /* PeopleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleView.m; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* RaiseMan-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RaiseMan-Info.plist"; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* RaiseMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,6 +116,8 @@
 				8C9094EF130DA1420058B741 /* AppController.m */,
 				8C9094F4130DA2EE0058B741 /* PreferenceController.h */,
 				8C9094F5130DA2EE0058B741 /* PreferenceController.m */,
+				8C9097541313F3050058B741 /* PeopleView.h */,
+				8C9097551313F3050058B741 /* PeopleView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				8C3E512F1308822C008883CF /* Person.m in Sources */,
 				8C9094F0130DA1420058B741 /* AppController.m in Sources */,
 				8C9094F6130DA2EE0058B741 /* PreferenceController.m in Sources */,
+				8C9097561313F3050058B741 /* PeopleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
