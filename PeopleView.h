@@ -18,6 +18,6 @@
 	int currentPage;
 }
 
--(id)initWithPeople:(NSArray *)array;
+-(id)initWithPeople:(NSArray *)persons;
 
 @end
